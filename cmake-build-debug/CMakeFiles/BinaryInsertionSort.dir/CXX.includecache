@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Nathan/CLionProjects/project6-WFUNathan18/BinaryInsertionSort.cpp
+BinaryInsertionSort.h
+/Users/Nathan/CLionProjects/project6-WFUNathan18/BinaryInsertionSort.h
+
+/Users/Nathan/CLionProjects/project6-WFUNathan18/BinaryInsertionSort.h
+vector
+-
+
+/Users/Nathan/CLionProjects/project6-WFUNathan18/InsertionSort.cpp
+iostream
+-
+vector
+-
+cassert
+-
+BinaryInsertionSort.h
+/Users/Nathan/CLionProjects/project6-WFUNathan18/BinaryInsertionSort.h
+Node.h
+/Users/Nathan/CLionProjects/project6-WFUNathan18/Node.h
+
+/Users/Nathan/CLionProjects/project6-WFUNathan18/Node.h
+

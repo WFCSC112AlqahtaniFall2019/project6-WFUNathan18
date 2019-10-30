@@ -1,5 +1,6 @@
 #ifndef NODE_H
 #define NODE_H
+#include "LinkedList.h"
 
 class Node {
 public:
@@ -9,6 +10,7 @@ public:
         value = v;
         next = n;
     }
+    friend class LinkedList;
 private:
 
     int value;
