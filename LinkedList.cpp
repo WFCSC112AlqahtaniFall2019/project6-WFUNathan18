@@ -9,13 +9,22 @@ LinkedList::LinkedList() {
 
 LinkedList::LinkedList(const LinkedList &origList) {
     cout << "-Calling Copy Constructor-" << endl;
-    //head = new Node;
-    //*head = *(origList.head);
+    Node* cursor = origList.head;
+    while(cursor != nullptr) {
+        Append(cursor ->value);
+        cursor = cursor ->next;
+    }
 }
 
 LinkedList::~LinkedList() {
     cout << "-Calling Destructor-" << endl;
-
+    Node* cursor = head;
+    while(cursor != nullptr) {
+        cursor = cursor ->next;
+        head ->next = nullptr;
+        delete head;
+        head = cursor;
+    }
 }
 
 bool LinkedList::IsItem(int item) const {
@@ -79,9 +88,10 @@ bool LinkedList::Remove(int item) {
     return false; //If item not in list, do nothing
 }
 
-LinkedList& LinkedList::operator=(const LinkedList) {
+LinkedList& LinkedList::operator=(LinkedList rhs) {
     cout << "-Calling Assignment Operator-" << endl;
-
+    swap(head, rhs.head);
+    return *this;
 }
 
 void LinkedList::PrintList() const {
@@ -91,12 +101,13 @@ void LinkedList::PrintList() const {
         cout << "-List is Empty-" << endl;
     else {
         while (cursor) {
-            cout << cursor ->value << endl;
+            cout << cursor ->value << " ";
             cursor = cursor ->next;
         }
     }
 }
 
-void LinkedList::ListInsertionSort(int item) {
+void LinkedList::ListInsertionSort() {
     cout << "-Sorting List-" << endl;
+
 }

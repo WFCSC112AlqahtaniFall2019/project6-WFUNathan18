@@ -6,5 +6,10 @@ CMakeFiles/BinaryInsertionSort.dir/BinaryInsertionSort.cpp.o: ../BinaryInsertion
 
 CMakeFiles/BinaryInsertionSort.dir/InsertionSort.cpp.o: ../BinaryInsertionSort.h
 CMakeFiles/BinaryInsertionSort.dir/InsertionSort.cpp.o: ../InsertionSort.cpp
+CMakeFiles/BinaryInsertionSort.dir/InsertionSort.cpp.o: ../LinkedList.h
 CMakeFiles/BinaryInsertionSort.dir/InsertionSort.cpp.o: ../Node.h
+
+CMakeFiles/BinaryInsertionSort.dir/LinkedList.cpp.o: ../LinkedList.cpp
+CMakeFiles/BinaryInsertionSort.dir/LinkedList.cpp.o: ../LinkedList.h
+CMakeFiles/BinaryInsertionSort.dir/LinkedList.cpp.o: ../Node.h
 

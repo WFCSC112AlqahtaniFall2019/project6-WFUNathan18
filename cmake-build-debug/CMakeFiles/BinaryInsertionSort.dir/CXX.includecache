@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/Nathan/CLionProjects/project6-WFUNathan18/BinaryInsertionSort.cpp
-BinaryInsertionSort.h
-/Users/Nathan/CLionProjects/project6-WFUNathan18/BinaryInsertionSort.h
-
 /Users/Nathan/CLionProjects/project6-WFUNathan18/BinaryInsertionSort.h
 vector
 -
@@ -23,6 +19,16 @@ cassert
 -
 BinaryInsertionSort.h
 /Users/Nathan/CLionProjects/project6-WFUNathan18/BinaryInsertionSort.h
+LinkedList.h
+/Users/Nathan/CLionProjects/project6-WFUNathan18/LinkedList.h
+
+/Users/Nathan/CLionProjects/project6-WFUNathan18/LinkedList.cpp
+iostream
+-
+LinkedList.h
+/Users/Nathan/CLionProjects/project6-WFUNathan18/LinkedList.h
+
+/Users/Nathan/CLionProjects/project6-WFUNathan18/LinkedList.h
 Node.h
 /Users/Nathan/CLionProjects/project6-WFUNathan18/Node.h
 

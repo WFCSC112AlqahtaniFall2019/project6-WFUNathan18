@@ -8,13 +8,13 @@ public:
     LinkedList(const LinkedList &origList); //Copy Constructor
     ~LinkedList(); //Destructor
     bool IsItem(int item) const; //Searches if an item is in the list
-    void Append(int item); //Adds to list
+    void Append(int item); //Adds to end of list
     bool Remove(int item); //Remove from list
-    LinkedList &operator= (const LinkedList); //Copy Assignment Operator
+    LinkedList &operator= (LinkedList rhs); //Copy Assignment Operator
     void PrintList() const; //Prints contents of the list
-    void ListInsertionSort(int item);
+    void ListInsertionSort();
 private:
-    Node *head; //Beginning of the Linked List
+    Node* head; //Beginning of the Linked List
 };
 
 #endif //BINARYINSERTIONSORT_LINKEDLIST_H
