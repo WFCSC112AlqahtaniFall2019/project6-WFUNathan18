@@ -45,10 +45,11 @@ int main() {
         }
 
         // print out sorted list
+        cout << "Sorted Vector:" << endl;
         for (int i = 0; i < v.size(); i++) {
-
             cout << v[i] << " ";
         }
+        cout << endl;
 
         // FINISH ME
 
@@ -57,8 +58,10 @@ int main() {
         list.ListInsertionSort();
         clock_t end_listInsertionSort = clock();
 
-        // Print Sorted List
+        // Print Sorted Linked List
+        cout << "Sorted Linked List:" << endl;
         list.PrintList();
+        cout << endl;
 
         // Calc Times
         double elapsed_insertionSort = double(end_insertionSort - start_insertionSort) / CLOCKS_PER_SEC;

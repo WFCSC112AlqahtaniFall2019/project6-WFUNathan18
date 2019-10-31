@@ -110,4 +110,35 @@ void LinkedList::PrintList() const {
 void LinkedList::ListInsertionSort() {
     cout << "-Sorting List-" << endl;
 
+    Node* beforePrevious = head;
+    Node* cursor = head;
+    cursor = cursor ->next;
+    Node* previous = head;
+
+    while (cursor != nullptr) {
+        if (cursor ->value < previous ->value) { //If the value behind cursor is greater than current cursor
+            if (cursor -> value < head ->value) { //If head is greater than current cursor
+                previous ->next = cursor ->next; //Make prev. point to node after cursor
+                cursor ->next = head; //Make cursor point to prev.
+                head = cursor; //Update head
+            }
+
+            else { //Otherwise, head is smallest in list
+                beforePrevious = head; //Start at beginning of list
+                while (beforePrevious ->next ->value < cursor ->value) { //Catch up with cursor and
+                    beforePrevious = beforePrevious ->next;
+                }
+                previous ->next = cursor ->next; //Make prev. point to node after cursor
+                cursor ->next = beforePrevious ->next; //Make cursor point to node after beforePrevious (prev.)
+                beforePrevious ->next = cursor; //Make the node before previous point to cursor
+            }
+        }
+
+        else { //If nothing needs to be changed
+            cursor = cursor ->next; //Move cursor and previous forward
+            previous = previous ->next;
+        }
+
+        cursor = previous ->next; //Ensure cursor is always ahead of previous
+    }
 }
