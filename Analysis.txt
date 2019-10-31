@@ -1,0 +1,6 @@
+The graphs for Linked List and Vectors have roughly the same general shape. However, insertionSort()
+via Linked List vastly outperforms over Vectors. I believe this is because of having to shift the entire
+vector forward one element at a time for each insertion, and because of the binarySearch() function that insertionSort()
+with vectors required. Additionally, while both functions follow the same logic, the individual nodes in the linked list
+are not being disconnected and inserted in quite the same manner as the elements in a vector. Rather, their pointers are being
+reassigned such that when read, the nodes will appear in ascending order.
