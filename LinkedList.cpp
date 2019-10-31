@@ -28,7 +28,6 @@ LinkedList::~LinkedList() {
 }
 
 bool LinkedList::IsItem(int item) const {
-    cout << "-Looking for Item in List-" << endl;
     Node* cursor = head;
     while (cursor != nullptr) {
         if (cursor ->value == item) {
@@ -42,7 +41,6 @@ bool LinkedList::IsItem(int item) const {
 }
 
 void LinkedList::Append(int item) {
-    cout << "-Appending Node-" << endl;
     if (head == nullptr) { //If list is empty
         head = new Node(item); //Update head
     }
@@ -55,9 +53,8 @@ void LinkedList::Append(int item) {
 }
 
 bool LinkedList::Remove(int item) {
-    cout << "-Attempting to Remove Node-" << endl;
     if (head == nullptr) { //If list is empty
-        cout << "-Attempt Failed-" << endl;
+        cout << "-Attempt to Remove Node Failed-" << endl;
         return false; //Do nothing
     }
 
@@ -96,7 +93,6 @@ LinkedList& LinkedList::operator=(LinkedList rhs) {
 
 void LinkedList::PrintList() const {
     Node* cursor = head;
-    cout << "-Printing List-" << endl;
     if (!cursor)
         cout << "-List is Empty-" << endl;
     else {
@@ -108,29 +104,33 @@ void LinkedList::PrintList() const {
 }
 
 void LinkedList::ListInsertionSort() {
-    cout << "-Sorting List-" << endl;
-
-    Node* beforePrevious = head;
     Node* cursor = head;
-    cursor = cursor ->next;
+    cursor = cursor ->next; //Intentionally move cursor one ahead of previous
     Node* previous = head;
+    Node* tempCursor;
 
     while (cursor != nullptr) {
         if (cursor ->value < previous ->value) { //If the value behind cursor is greater than current cursor
+            tempCursor = head; //Start (or restart) tempCursor at beginning of list
+
             if (cursor -> value < head ->value) { //If head is greater than current cursor
-                previous ->next = cursor ->next; //Make prev. point to node after cursor
-                cursor ->next = head; //Make cursor point to prev.
-                head = cursor; //Update head
+                previous ->next = cursor ->next;
+                cursor ->next = nullptr; //Disconnect from list
+                cursor ->next = head; //Insert in front of list
+                head = cursor; //Update as new head
+                cursor = previous ->next; //Ensure cursor is always ahead of previous
             }
 
             else { //Otherwise, head is smallest in list
-                beforePrevious = head; //Start at beginning of list
-                while (beforePrevious ->next ->value < cursor ->value) { //Catch up with cursor and
-                    beforePrevious = beforePrevious ->next;
+                while (tempCursor ->next ->value < cursor ->value) { //Iterate through list until the value after temp
+                                                                     //is less than cursor
+                    tempCursor = tempCursor ->next;
                 }
-                previous ->next = cursor ->next; //Make prev. point to node after cursor
-                cursor ->next = beforePrevious ->next; //Make cursor point to node after beforePrevious (prev.)
-                beforePrevious ->next = cursor; //Make the node before previous point to cursor
+                previous ->next = cursor ->next;
+                cursor ->next = nullptr; //Disconnect
+                cursor ->next = tempCursor ->next; //Insert after temp
+                tempCursor ->next = cursor;
+                cursor = previous ->next; //Ensure cursor is always ahead of previous
             }
         }
 
@@ -138,7 +138,5 @@ void LinkedList::ListInsertionSort() {
             cursor = cursor ->next; //Move cursor and previous forward
             previous = previous ->next;
         }
-
-        cursor = previous ->next; //Ensure cursor is always ahead of previous
     }
 }

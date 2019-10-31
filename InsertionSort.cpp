@@ -1,3 +1,8 @@
+// Author: Nathan Maynard
+// Course: CSC 112 Section B (Fall 2019)
+// Project: Project 6 - InsertionSort
+// Due Date: 3:30pm, Oct. 31, 2019
+
 #include <iostream>
 #include <vector>
 #include <cassert>
@@ -71,9 +76,6 @@ int main() {
         cout << endl << "Elapsed Time for vector insertionSort() with " << (100 * iter) << " elements: " << elapsed_insertionSort;
         cout << endl << "Elapsed Time for linked list listInsertionSort() with " << (100 * iter) << " elements: " << elapsed_listInsertionSort << endl;
         cout << endl;
-
-        // Delete Linked List to Free Memory
-
 
         iter++;
     }
